@@ -1,7 +1,7 @@
 import React from 'react'
-import NumButton from './NumButton'
 import Display from './Display'
 import Keypad from './Keypad'
+import { Box, Card } from '@material-ui/core'
 
 class Calculator extends React.Component{
     constructor(){
@@ -74,6 +74,9 @@ class Calculator extends React.Component{
             case "":
                 finalAnswer = vOne
                 break;
+            default:
+                finalAnswer = 0
+                break;
         }
 
         this.setState({
@@ -96,13 +99,18 @@ class Calculator extends React.Component{
         const nums = [1,2,3,4,5,6,7,8,9]
 
         return(
-            <div style={{width:"50px"}}>
-                <Display state={this.state}/>
-                <Keypad 
-                    handleNum={this.handleClickNum} 
-                    handleSign={this.handleClickSpecial} 
-                    handleReset={this.handleClickReset} 
-                    handleEqual={this.handleClickEquate}/>
+            <div>
+                <Box width={300} m={1} p={1}>
+                    <h1 style={{fontFamily:"Roboto", margin: "0px 0px 10px 0px"}}>Calculator</h1>
+                    <Box border={1} borderColor="secondary.main" borderRadius={5} mb={1} mr={1} px={2}>
+                        <Display state={this.state}/>
+                    </Box>
+                    <Keypad 
+                        handleNum={this.handleClickNum} 
+                        handleSign={this.handleClickSpecial} 
+                        handleReset={this.handleClickReset} 
+                        handleEqual={this.handleClickEquate}/>
+                </Box>
             </div>
         )
     }

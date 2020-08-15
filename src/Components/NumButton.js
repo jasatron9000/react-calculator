@@ -10,8 +10,8 @@ class NumButton extends React.Component{
         return(
             <div>
                 {this.props.value === null ?
-                <Button variant="outlined" color="secondary" onClick={this.props.handleClick}>{this.props.display}</Button>:
-                <Button variant="outlined" color="secondary" onClick={() => this.props.handleClick(this.props.value)}>{this.props.display}</Button>}
+                <Button fullWidth variant="outlined" color="secondary" onClick={this.props.handleClick}>{this.props.display}</Button>:
+                <Button fullWidth variant="outlined" color="secondary" onClick={() => this.props.handleClick(this.props.value)}>{this.props.display}</Button>}
             </div>
         )
     }
