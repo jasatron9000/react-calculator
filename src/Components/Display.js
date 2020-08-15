@@ -67,9 +67,9 @@ export default class Display extends Component {
     render() {
 
         return (
-            <div>
-                <p style={{fontFamily:"Roboto"}}>{this.state.topText}</p>
-                <h1 style={{fontFamily:"Roboto"}}>{this.state.bottomText}</h1>
+            <div style={{paddingTop:10, paddingBottom:10}}>
+                <p style={{fontFamily:"Roboto", margin:"0"}}>{this.state.topText}</p>
+                <h1 style={{fontFamily:"Roboto", margin:"0"}}>{this.state.bottomText}</h1>
             </div>
         )
     }
